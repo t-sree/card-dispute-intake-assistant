@@ -5,6 +5,7 @@ description = "Agent-assist tool that helps bank agents capture complete card di
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "httpx>=0.28.1",
     "pydantic>=2.14.1",
 ]
 
