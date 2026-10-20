@@ -70,6 +70,7 @@ class DisputeCase(BaseModel):
     case_id: str = Field(default_factory=_new_case_id)
     dispute_type: DisputeType | None = None
     transaction_id: str | None = None
+    transaction_confirmed: bool = False
     facts: dict[str, Fact] = Field(default_factory=dict)
     created_at: datetime = Field(default_factory=_utc_now)
 
@@ -83,3 +84,15 @@ class DisputeCase(BaseModel):
     def get_value(self, name: str) -> FactValue | None:
         fact = self.facts.get(name)
         return fact.value if fact else None
+
+
+class Speaker(StrEnum):
+    CUSTOMER = "customer"
+    AGENT = "agent"
+
+
+class Message(BaseModel):
+    model_config = ConfigDict(frozen=True, extra="forbid")
+
+    speaker: Speaker
+    text: str
