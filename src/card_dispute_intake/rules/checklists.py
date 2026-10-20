@@ -1,9 +1,9 @@
 """Required information per dispute type.
 
 Field lists are based on the evidence card networks expect for the matching reason codes
-(Visa 10.4 / 13.1 / 13.2 / 13.6, Mastercard 4837 / 4855 / 4841 / 4853) and the billing error
-notice content in Regulation Z, 12 CFR 1026.13. Order matters: it is the order an agent
-would naturally ask in, and the next-question logic relies on it.
+(see reason_codes.py) and the billing error notice content in Regulation Z, 12 CFR 1026.13.
+Order matters: it is the order an agent would naturally ask in, and the next-question logic
+relies on it.
 """
 
 from collections.abc import Callable
