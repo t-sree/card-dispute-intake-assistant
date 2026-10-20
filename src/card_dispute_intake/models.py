@@ -15,6 +15,11 @@ class DisputeType(StrEnum):
     CANCELLED_RECURRING = "cancelled_recurring"
 
 
+class CardNetwork(StrEnum):
+    VISA = "visa"
+    MASTERCARD = "mastercard"
+
+
 class FactSource(StrEnum):
     """Where a fact came from. Matters for review: stated facts are claims, account data is not."""
 
